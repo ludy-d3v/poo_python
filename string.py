@@ -31,7 +31,11 @@ def main():
     print(f"\nString em maiúsculas: {impressao.string_maiscula()}")
     print(f"\nString em minúsculas: {impressao.string_minuscula()}")
     print(f"\nVogais na string: {impressao.string_vogais()}\n")
-    print(impressao.substring())
+    
+    if impressao.substring():
+        print("A substring 'IFB' aparece no texto.\n")
+    else:
+        print("A substring 'IFB' NÃO está presente no texto.\n")
 
 if __name__ == "__main__":
     main()

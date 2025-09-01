@@ -15,4 +15,4 @@ def main():
     print(f"\nFrase criptografada: {frase_criptografada}\n")
 
 if __name__ == "__main__":
-    main()            
+    main()
