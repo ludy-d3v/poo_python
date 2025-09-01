@@ -14,18 +14,18 @@ class Impressao:
     
     def string_vogais(self):
         vogais = 'aeiouAEIOU'
-        encontradas = [char for char in self.string if char in vogais]
-        return encontradas
+        contador = 0
+    
+        for caracter in self.string:
+            if caracter in vogais:
+                contador += 1
+        return contador
 
     def substring(self):
-        if 'IFB' in self.string:
-            print("A substring 'IFB' foi encontrada na string.")
-            
-        else:
-            print("A substring 'IFB' não foi encontrada na string.")
+        return "IFB" in self.string.upper()
 
 def main():
-    texto = input("\nDigite uma string: ")
+    texto = input("\nDigite um texto: ")
     impressao = Impressao(texto)
     print(f"\nNúmero de caracteres: {impressao.numeros_caracteres()}")
     print(f"\nString em maiúsculas: {impressao.string_maiscula()}")
