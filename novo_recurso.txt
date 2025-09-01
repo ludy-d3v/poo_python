@@ -1,4 +1,0 @@
-metodo_novo(){
-	programador1
-	programador2
-}
