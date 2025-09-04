@@ -17,10 +17,16 @@ class Produto:
         self.__nome = novo_nome
 
     def set__preco(self, novo_preco):
-        self.__preco = novo_preco
+        if novo_preco <= 0:
+            print("\nO preço não pode ser zero ou negativo.")
+        else:
+            self.__preco = novo_preco
 
     def set__quantidade(self, nova_quantidade):
-        self.__quantidade = nova_quantidade
+        if nova_quantidade <= 0:
+            print("\nA quantidade não pode ser zero ou negativo.")
+        else:
+            self.__quantidade = nova_quantidade
     
 class CarrinhoDeCompras:
     def __init__(self):
@@ -31,7 +37,7 @@ class CarrinhoDeCompras:
 
     def remover_produto(self, nome):
         for produto in self.__produtos:
-            if produto.get__nome() == nome:
+            if produto.get__nome().lower() == nome.lower():
                 self.__produtos.remove(produto)
                 print(f"\nProduto removido com sucesso!")
                 return
@@ -51,7 +57,9 @@ class CarrinhoDeCompras:
         else:
             print("\nPRODUTOS NO CARRINHO: ")
             for produto in self.__produtos:
-                print(f"\nNome do produto: {produto.get__nome()}, Preço: {produto.get__preco()}, Quantidade: {produto.get__quantidade()}")
+                print(f"\nNome do produto: {produto.get__nome()}")
+                print(f"Preço: {produto.get__preco()}")
+                print(f"Quantidade: {produto.get__quantidade()}")
 
 def main():
     carrinho = CarrinhoDeCompras()
@@ -71,9 +79,10 @@ def main():
             nome = input("\nDigite o nome do produto: ")
             preco = float(input("Digite o preço do produto: "))
             quantidade = int(input("Digite a quantidade do produto: "))
+
             produto = Produto(nome, preco, quantidade)
             carrinho.adicionar_produto(produto)
-            print("\nProduto adicionado com sucesso!")
+            print(f"\nProduto {nome} adicionado com sucesso!")
 
         elif opcao == '2':
             nome = input("\nDigite o nome do produto a ser removido: ")
@@ -86,7 +95,7 @@ def main():
             print(f"\nO valor total do carrinho é: R$ {carrinho.calcular_valor_total():.2f}")
         
         elif opcao == '5':
-            print("\nObrigada por usar nosso sistema. Até mais! ;)\n")
+            print("\nObrigada por usar nosso sistema. Encerrando programa...\n")
             break
         else:
             print("\nOpção inválida. Tente novamente.")
