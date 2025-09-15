@@ -64,6 +64,8 @@ def main():
         elif opcao == "5":
             print("\nEncerrando o sistema...")
             break
+        else:
+            print("\nOpção inválida. Tente novamente.")
 
 if __name__ == "__main__":
     main()
