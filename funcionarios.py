@@ -45,6 +45,9 @@ def main():
         if opcao == "1":
             nome = input("\nNome do funcionário: ")
             salario_base = float(input("\nSalário base do funcionário: "))
+            if salario_base < 0:
+                print("\nSalário base não pode ser negativo. Tente novamente.")
+                continue
             funcionario = Funcionario(nome, salario_base)
             print("\nFuncionário adicionado com sucesso!")
 
