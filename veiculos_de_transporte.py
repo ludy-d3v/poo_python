@@ -38,7 +38,7 @@ try:
     
     consumoPorKm = float(input("\nDigite o consumo do ônibus por km (em litros): "))
     if consumoPorKm <= 0:
-        raise ValueError("O consumo de energia por km não pode ser negativo ou zero.")
+        raise ValueError("O consumo do ônibus não pode ser negativo ou zero.")
     
     onibus = Onibus(placa, capacidadePassageiros, consumoPorKm)
 
@@ -52,7 +52,7 @@ try:
     
     consumoEnergiaPorKm = float(input("\nDigite o consumo de energia por km: "))
     if consumoEnergiaPorKm <= 0:
-        raise ValueError("O consumo de energia por km não pode ser negativo ou zero.")
+        raise ValueError("O consumo do metrô não pode ser negativo ou zero.")
     
     metro = Metro(placa, capacidadePassageiros, consumoEnergiaPorKm)
 
